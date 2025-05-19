@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #0f1123);
+  color: #f5c6f5;
+  font-family: "Cascadia Code", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.terminal {
+  background-color: none;
+  padding: 2rem;
+  width: 93%;
+  max-width: 100rem;
+  height: 85vh;
+  border: 3px solid #ff9100;
+  box-shadow: 0 0 10px #ffffff;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 20px;
+}
+
+.terminal::-webkit-scrollbar {
+  display: none;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.prompt {
+  margin-right: 0.5rem;
+  color: #e87a64;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f5c6f5;
+  font-family: "Cascadia Code", sans-serif;
+  font-size: 19px;
+  outline: none;
+}
+
+.cursor {
+  width: 10px;
+  height: 1.2rem;
+  background: #00ffff;
+  margin-left: 4px;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 20px; /* sama seperti desktop */
+    padding: 1rem;
+    height: auto;
+  }
+
+  .terminal {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    padding: 1.5rem;
+    border-width: 2px;
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 20px; /* tetap bulat di semua sisi */
+    margin: 1rem 0; /* beri jarak atas bawah agar tidak ketutup */
+  }
+
+  .input {
+    font-size: 20px;
+  }
+
+  .cursor {
+    width: 8px;
+    height: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 21px; /* sedikit lebih besar dari default untuk kenyamanan */
+    padding: 1rem;
+    height: auto;
+  }
+
+  .terminal {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    padding: 1.2rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+  }
+
+  .input {
+    font-size: 20px;
+  }
+
+  .cursor {
+    width: 6px;
+    height: 1.1rem;
+  }
+}
