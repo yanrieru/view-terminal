@@ -13,17 +13,18 @@ body {
 }
 
 .terminal {
-  background-color: none;
+  background-color: transparent;
   padding: 2rem;
-  width: 93%;
+  width: 97%;
   max-width: 100rem;
-  height: 85vh;
+  height: 95vh;
   border: 3px solid #ff9100;
   box-shadow: 0 0 10px #ffffff;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
   border-radius: 20px;
+  box-sizing: border-box;
 }
 
 .terminal::-webkit-scrollbar {
@@ -70,26 +71,57 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* Media query untuk tablet (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
   body {
-    font-size: 20px; /* sama seperti desktop */
-    padding: 1rem;
-    height: auto;
+    font-size: 19px;
+    padding: 0;
   }
 
   .terminal {
-    width: 100%;
-    height: auto;
-    max-height: 90vh;
-    padding: 1.5rem;
-    border-width: 2px;
-    box-shadow: 0 0 5px #ffffff;
-    border-radius: 20px; /* tetap bulat di semua sisi */
-    margin: 1rem 0; /* beri jarak atas bawah agar tidak ketutup */
+    width: 97%;
+    height: 95vh;
+    padding: 1.8rem;
+    border-width: 2.5px;
+    /* max-height: 90vh; */
+    margin: auto;
   }
 
   .input {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .cursor {
+    width: 9px;
+    height: 1.2rem;
+  }
+}
+
+/* Tampilan mobile besar/tablet kecil */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 0;
+    /* height: 100vh; */
+    overflow: hidden;
+  }
+
+  .terminal {
+    width: 97%;
+    padding: 1.5rem;
+    border-width: 2px;
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 16px;
+    margin: auto;
+    height: 95vh;
+    /* max-height: 80vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .input {
+    font-size: 18px;
   }
 
   .cursor {
@@ -98,28 +130,59 @@ body {
   }
 }
 
+/* Perbaikan untuk tampilan mobile */
 @media (max-width: 480px) {
   body {
-    font-size: 21px; /* sedikit lebih besar dari default untuk kenyamanan */
-    padding: 1rem;
-    height: auto;
+    font-size: 16px;
+    padding: 0;
+    /* height: 100vh; */
+    overflow: hidden;
   }
 
   .terminal {
-    width: 100%;
-    height: auto;
-    max-height: 90vh;
-    padding: 1.2rem;
-    border-radius: 20px;
-    margin: 1rem 0;
+    width: 97%;
+    padding: 1rem;
+    border-width: 2px;
+    border-radius: 14px;
+    margin: auto;
+    height: 95vh;
+    /* max-height: 85vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .input {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .cursor {
     width: 6px;
-    height: 1.1rem;
+    height: 1rem;
+  }
+}
+
+/* Tambahkan media query untuk layar sangat kecil */
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .terminal {
+    width: 97%;
+    height: 95vh;
+    padding: 0.8rem;
+    border-width: 1.5px;
+    border-radius: 12px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .cursor {
+    width: 5px;
+    height: 0.9rem;
   }
 }
