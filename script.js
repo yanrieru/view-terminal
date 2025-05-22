@@ -1,6 +1,11 @@
 const terminal = document.getElementById("terminal");
 let currentInput;
 
+window.addEventListener("DOMContentLoaded", () => {
+  const terminal = document.getElementById("terminal");
+  terminal.classList.add("fade-in");
+});
+
 const commands = {
   help: () => {
     printLines(["help : untuk apa?", "about : informasi tentang diriku", "contact : hubungi saya", "clear : menghapus semua history di terminal"]);

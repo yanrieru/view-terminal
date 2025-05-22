@@ -61,6 +61,21 @@ body {
   animation: blink 1s ease-in-out infinite;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-out;
+}
+
 @keyframes blink {
   0%,
   100% {
@@ -75,114 +90,37 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
   body {
     font-size: 19px;
-    padding: 0;
   }
-
   .terminal {
-    width: 97%;
-    height: 95vh;
     padding: 1.8rem;
     border-width: 2.5px;
-    /* max-height: 90vh; */
-    margin: auto;
   }
-
   .input {
     font-size: 18px;
   }
-
   .cursor {
     width: 9px;
     height: 1.2rem;
   }
 }
-
-/* Tampilan mobile besar/tablet kecil */
-@media (min-width: 481px) and (max-width: 768px) {
-  body {
-    font-size: 18px;
-    padding: 0;
-    /* height: 100vh; */
-    overflow: hidden;
-  }
-
-  .terminal {
-    width: 97%;
-    padding: 1.5rem;
-    border-width: 2px;
-    box-shadow: 0 0 5px #ffffff;
-    border-radius: 16px;
-    margin: auto;
-    height: 95vh;
-    /* max-height: 80vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .input {
-    font-size: 18px;
-  }
-
-  .cursor {
-    width: 8px;
-    height: 1.2rem;
-  }
-}
-
-/* Perbaikan untuk tampilan mobile */
+/* Tampilan mobile */
 @media (max-width: 480px) {
   body {
     font-size: 16px;
-    padding: 0;
-    /* height: 100vh; */
-    overflow: hidden;
   }
-
   .terminal {
-    width: 97%;
     padding: 1rem;
     border-width: 2px;
     border-radius: 14px;
-    margin: auto;
-    height: 95vh;
-    /* max-height: 85vh; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
-
   .input {
     font-size: 16px;
   }
-
   .cursor {
     width: 6px;
     height: 1rem;
-  }
-}
-
-/* Tambahkan media query untuk layar sangat kecil */
-@media (max-width: 320px) {
-  body {
-    font-size: 14px;
-    padding: 0;
-  }
-
-  .terminal {
-    width: 97%;
-    height: 95vh;
-    padding: 0.8rem;
-    border-width: 1.5px;
-    border-radius: 12px;
-  }
-
-  .input {
-    font-size: 14px;
-  }
-
-  .cursor {
-    width: 5px;
-    height: 0.9rem;
   }
 }
