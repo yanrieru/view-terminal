@@ -18,8 +18,8 @@ body {
   width: 97%;
   max-width: 100rem;
   height: 95vh;
-  border: 3px solid #ff9100;
-  box-shadow: 0 0 10px #ffffff;
+  /* border: 3px solid #ff9100; */
+  /* box-shadow: 0 0 10px #ffffff; */
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -56,7 +56,7 @@ body {
 .cursor {
   width: 10px;
   height: 1.2rem;
-  background: #00ffff;
+  background: #e100ff;
   margin-left: 4px;
   animation: blink 1s ease-in-out infinite;
 }
