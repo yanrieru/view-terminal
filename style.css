@@ -12,14 +12,18 @@ body {
   overflow: hidden;
 }
 
+hr {
+  border: none;
+  border-top: 1px;
+  margin: 10px 0;
+}
+
 .terminal {
   background-color: transparent;
   padding: 2rem;
   width: 97%;
   max-width: 100rem;
   height: 95vh;
-  /* border: 3px solid #ff9100; */
-  /* box-shadow: 0 0 10px #ffffff; */
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -49,16 +53,25 @@ body {
   border: none;
   color: #f5c6f5;
   font-family: "Cascadia Code", sans-serif;
-  font-size: 19px;
+  font-size: 20px;
   outline: none;
 }
 
 .cursor {
   width: 10px;
   height: 1.2rem;
-  background: #e100ff;
+  background: #ffffff;
   margin-left: 4px;
   animation: blink 1s ease-in-out infinite;
+}
+
+.ascii {
+  white-space: pre; /* jaga spasi & layout */
+  line-height: 1;
+  color: #2ee9d1; /* teal kehijauan */
+  font-size: 10px; /* desktop default */
+  margin: 0 0 1rem 0;
+  font-family: "Cascadia Code", monospace;
 }
 
 @keyframes fadeIn {
@@ -93,7 +106,6 @@ body {
   }
   .terminal {
     padding: 1.8rem;
-    border-width: 2.5px;
   }
   .input {
     font-size: 18px;
@@ -110,7 +122,6 @@ body {
   }
   .terminal {
     padding: 1rem;
-    border-width: 2px;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -122,5 +133,22 @@ body {
   .cursor {
     width: 6px;
     height: 1rem;
+  }
+}
+
+/* skala font ASCII agar muat di layar kecil */
+@media (max-width: 1024px) {
+  .ascii {
+    font-size: 7px;
+  }
+}
+@media (max-width: 768px) {
+  .ascii {
+    font-size: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .ascii {
+    font-size: 3px;
   }
 }
